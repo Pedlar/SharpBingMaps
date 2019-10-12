@@ -1,30 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+﻿using SharpBingMaps.Controllers;
+using SharpBingMaps.Interfaces;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
+using Windows.UI.Xaml.Controls.Maps;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+namespace SharpBingMaps {
+    public sealed partial class MainPage : Page, IMainView {
+        private MapController mapController;
 
-namespace SharpBingMaps
-{
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
-    public sealed partial class MainPage : Page
-    {
-        public MainPage()
-        {
+        public MainPage() {
             this.InitializeComponent();
+            //TODO: Need to look more into how the code for the XAML stuff is Auto-Generated and if there is any
+            //      Dependency Injection tools already in place. This should be passed in the Constructor, but because
+            //      That's auto-gen I don't know how to fit that in yet. Looking at Autofac but haven't seen XAML
+            //      examples yet.
+            mapController = new MapController();
+
+            mapController.SetView(this);
         }
+
+        public void MapLoaded(object sender, RoutedEventArgs routedEventArgs) {
+            mapController.SetMapControls(mMap);
+            mapController.SetSceneToEugeneFriendly();
+        }
+
+        public void MapClick(MapControl sender, MapInputEventArgs mapInputEventArgs) {
+            mapController.HandleMapClicked(mapInputEventArgs);
+        }
+
+        public void SetStatusText(string status) {
+            StatusBlock.Text = status;
+        }
+    }
+
+    public interface IMyResource {
+
     }
 }
