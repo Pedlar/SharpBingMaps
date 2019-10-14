@@ -7,7 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpBingMaps", "SharpBingM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpRestApi", "SharpRestApi\SharpRestApi.csproj", "{75D2CD11-38F0-4D17-B7DD-A5E1A3D400C0}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "SharpShared", "SharpShared\SharpShared.shproj", "{9866D9F9-9D58-41E9-A7EA-6D070C652F5A}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		SharpShared\SharpShared.projitems*{07d50670-9b77-4591-816a-decd92208a13}*SharedItemsImports = 4
+		SharpShared\SharpShared.projitems*{9866d9f9-9d58-41e9-a7ea-6d070c652f5a}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|ARM = Debug|ARM

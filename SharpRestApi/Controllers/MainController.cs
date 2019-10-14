@@ -6,7 +6,7 @@ namespace SharpRestApi.Controllers {
     public class MainController : Controller {
 
         [HttpGet]
-        public string GetIndex() {
+        public string Get() {
             return "Index";
         }
     }

@@ -14,4 +14,6 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.6" />
   </ItemGroup>
 
+  <Import Project="..\SharpShared\SharpShared.projitems" Label="Shared" />
+
 </Project>

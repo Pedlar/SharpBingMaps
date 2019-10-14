@@ -16,14 +16,12 @@ namespace SharpBingMaps.Network.Models {
         public List<string> matchCodes { get; set; }
     }
 
-    public class Point
-    {
+    public class Point {
         public string type { get; set; }
         public List<double> coordinates { get; set; }
     }
 
-    public class Address
-    {
+    public class Address {
         public string addressLine { get; set; }
         public string adminDistrict { get; set; }
         public string adminDistrict2 { get; set; }
@@ -33,8 +31,7 @@ namespace SharpBingMaps.Network.Models {
         public string postalCode { get; set; }
     }
 
-    public class GeocodePoint
-    {
+    public class GeocodePoint {
         public string type { get; set; }
         public List<double> coordinates { get; set; }
         public string calculationMethod { get; set; }

@@ -10,7 +10,7 @@ namespace SharpBingMaps.Controller {
         private readonly HttpClient httpClient;
 
         public LocationService() {
-            httpClient = new HttpClient();
+            httpClient = new HttpClient(); // TODO: This should be injected, but face the same Dependency Injection problem as the other spot.
             httpClient.BaseAddress = new Uri(basePath);
             httpClient.DefaultRequestHeaders.Accept.Clear();
             httpClient.DefaultRequestHeaders.Accept.Add(
